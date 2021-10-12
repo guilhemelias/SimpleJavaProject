@@ -4837,7 +4837,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"top": -336,
+											"left": -352,
+											"top": 672,
 											"height": 13
 										},
 										{
@@ -4847,11 +4848,11 @@
 												"$ref": "AAAAAAF8X0dV6JDYJiY="
 											},
 											"font": "Arial;13;1",
-											"left": 365,
-											"top": 255,
-											"width": 53.4599609375,
+											"left": 189,
+											"top": 759,
+											"width": 103,
 											"height": 13,
-											"text": "Manager"
+											"text": "Animal Manager"
 										},
 										{
 											"_type": "LabelView",
@@ -4861,7 +4862,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"top": -336,
+											"left": -352,
+											"top": 672,
 											"width": 123.5126953125,
 											"height": 13,
 											"text": "(from Class Diagram)"
@@ -4874,15 +4876,16 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"top": -336,
+											"left": -352,
+											"top": 672,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 360,
-									"top": 248,
-									"width": 63.4599609375,
+									"left": 184,
+									"top": 752,
+									"width": 113,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF8X0dV6JDZClc="
@@ -4907,9 +4910,9 @@
 										"$ref": "AAAAAAF8X0dV55DVCB8="
 									},
 									"font": "Arial;13;0",
-									"left": 360,
-									"top": 273,
-									"width": 63.4599609375,
+									"left": 184,
+									"top": 777,
+									"width": 113,
 									"height": 10
 								},
 								{
@@ -4922,9 +4925,9 @@
 										"$ref": "AAAAAAF8X0dV55DVCB8="
 									},
 									"font": "Arial;13;0",
-									"left": 360,
-									"top": 283,
-									"width": 63.4599609375,
+									"left": 184,
+									"top": 787,
+									"width": 113,
 									"height": 10
 								},
 								{
@@ -4938,7 +4941,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"top": -168,
+									"left": -176,
+									"top": 336,
 									"width": 10,
 									"height": 10
 								},
@@ -4953,16 +4957,17 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"top": -168,
+									"left": -176,
+									"top": 336,
 									"width": 10,
 									"height": 10
 								}
 							],
 							"font": "Arial;13;0",
 							"containerChangeable": true,
-							"left": 360,
-							"top": 248,
-							"width": 63.4599609375,
+							"left": 184,
+							"top": 752,
+							"width": 113,
 							"height": 45,
 							"nameCompartment": {
 								"$ref": "AAAAAAF8X0dV6JDYJiY="
@@ -5008,8 +5013,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 944,
-											"top": -368,
+											"left": 368,
+											"top": -336,
 											"height": 13
 										},
 										{
@@ -5019,8 +5024,8 @@
 												"$ref": "AAAAAAF8X0d2P5IITXo="
 											},
 											"font": "Arial;13;1",
-											"left": 677,
-											"top": 183,
+											"left": 389,
+											"top": 199,
 											"width": 41.919921875,
 											"height": 13,
 											"text": "Main"
@@ -5033,8 +5038,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 944,
-											"top": -368,
+											"left": 368,
+											"top": -336,
 											"width": 123.5126953125,
 											"height": 13,
 											"text": "(from Class Diagram)"
@@ -5047,15 +5052,15 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 944,
-											"top": -368,
+											"left": 368,
+											"top": -336,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 672,
-									"top": 176,
+									"left": 384,
+									"top": 192,
 									"width": 51.919921875,
 									"height": 25,
 									"stereotypeLabel": {
@@ -5081,8 +5086,8 @@
 										"$ref": "AAAAAAF8X0d2P5IFA8w="
 									},
 									"font": "Arial;13;0",
-									"left": 672,
-									"top": 201,
+									"left": 384,
+									"top": 217,
 									"width": 51.919921875,
 									"height": 10
 								},
@@ -5096,8 +5101,8 @@
 										"$ref": "AAAAAAF8X0d2P5IFA8w="
 									},
 									"font": "Arial;13;0",
-									"left": 672,
-									"top": 211,
+									"left": 384,
+									"top": 227,
 									"width": 51.919921875,
 									"height": 10
 								},
@@ -5112,8 +5117,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 472,
-									"top": -184,
+									"left": 184,
+									"top": -168,
 									"width": 10,
 									"height": 10
 								},
@@ -5128,16 +5133,16 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 472,
-									"top": -184,
+									"left": 184,
+									"top": -168,
 									"width": 10,
 									"height": 10
 								}
 							],
 							"font": "Arial;13;0",
 							"containerChangeable": true,
-							"left": 672,
-							"top": 176,
+							"left": 384,
+							"top": 192,
 							"width": 51.919921875,
 							"height": 45,
 							"nameCompartment": {
@@ -7381,7 +7386,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Manager"
+					"name": "Animal Manager"
 				},
 				{
 					"_type": "UMLClass",
@@ -7766,7 +7771,7 @@
 									"font": "Arial;13;0",
 									"left": 872.5,
 									"top": 364.5,
-									"width": 118.341796875,
+									"width": 118,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF8dJ2n9dFHNcM="
@@ -8238,7 +8243,7 @@
 									"font": "Arial;13;0",
 									"left": 911.5,
 									"top": 508.5,
-									"width": 111.8671875,
+									"width": 111,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF8dKQn/tw8zOc="
@@ -9182,7 +9187,7 @@
 									"font": "Arial;13;0",
 									"left": 934.5,
 									"top": 596.5,
-									"width": 108.25537109375,
+									"width": 108,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF8dKUqJ+APAos="
@@ -9859,9 +9864,9 @@
 														"$ref": "AAAAAAF8dLfFVRYU5+o="
 													},
 													"font": "Arial;13;0",
-													"left": 75.97900390625,
+													"left": 71.58642578125,
 													"top": 10,
-													"width": 115.9052734375,
+													"width": 102.791015625,
 													"height": 13,
 													"text": "SequenceDiagram1"
 												},
@@ -9874,7 +9879,7 @@
 													"font": "Arial;13;1",
 													"left": 10,
 													"top": 10,
-													"width": 60.97900390625,
+													"width": 56.58642578125,
 													"height": 13,
 													"text": "interaction"
 												}
