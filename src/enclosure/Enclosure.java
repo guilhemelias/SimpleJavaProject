@@ -6,10 +6,12 @@ public class Enclosure {
 	private float superficiy;
 	private int capacity;
 	private int currentAnimals;
+	private Cleanliness cleanliness;
+	
 	
 
 	public Enclosure(String name, float superficy, int capacity) {
-		
+		cleanliness=Cleanliness.CLEAN;
 	}
 
 
@@ -50,5 +52,15 @@ public class Enclosure {
 
 	public void setCurrentAnimals(int currentAnimals) {
 		this.currentAnimals = currentAnimals;
+	}
+
+
+	public Cleanliness getCleanliness() {
+		return cleanliness;
+	}
+
+
+	public void setCleanliness(Cleanliness cleanliness) {
+		this.cleanliness = cleanliness;
 	}
 }
