@@ -1,4 +1,4 @@
-package zoo;
+package animals;
 
 public class Auk extends Oviparous{
 

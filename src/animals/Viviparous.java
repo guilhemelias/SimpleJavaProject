@@ -1,4 +1,4 @@
-package zoo;
+package animals;
 
 public abstract class Viviparous extends Animal {
 
