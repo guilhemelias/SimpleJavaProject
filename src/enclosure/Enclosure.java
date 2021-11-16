@@ -1,16 +1,22 @@
 package enclosure;
+import animals.*;
+
+import java.util.LinkedList;
 
 public class Enclosure {
 	
-	private String name;
-	private float superficiy;
-	private int capacity;
-	private int currentAnimals;
-	private Cleanliness cleanliness;
+	protected String name;
+	protected float superficiy;
+	protected int capacity;
+	protected Cleanliness cleanliness;
+	protected LinkedList<Animal> listAnimals = new LinkedList<Animal>();
 	
 	
 
 	public Enclosure(String name, float superficy, int capacity) {
+		this.name=name;
+		this.superficiy=superficy;
+		this.capacity=capacity;
 		cleanliness=Cleanliness.CLEAN;
 	}
 
@@ -45,16 +51,6 @@ public class Enclosure {
 	}
 
 
-	public int getCurrentAnimals() {
-		return currentAnimals;
-	}
-
-
-	public void setCurrentAnimals(int currentAnimals) {
-		this.currentAnimals = currentAnimals;
-	}
-
-
 	public Cleanliness getCleanliness() {
 		return cleanliness;
 	}
@@ -62,5 +58,15 @@ public class Enclosure {
 
 	public void setCleanliness(Cleanliness cleanliness) {
 		this.cleanliness = cleanliness;
+	}
+
+
+	public LinkedList<Animal> getListAnimals() {
+		return listAnimals;
+	}
+
+
+	public void setListAnimals(LinkedList<Animal> listAnimals) {
+		this.listAnimals = listAnimals;
 	}
 }

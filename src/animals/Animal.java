@@ -2,14 +2,14 @@ package animals;
 
 public abstract class Animal {
 	
-	private String name;
-	private int size;
-	private int weight;
-	private int age;
-	private boolean gender;
-	private boolean isSick;
-	private boolean isHungry;
-	private boolean isTired;
+	protected String name;
+	protected float size;
+	protected float weight;
+	protected int age;
+	protected boolean gender;
+	protected boolean isSick;
+	protected boolean isHungry;
+	protected boolean isTired;
 	
 	
 
@@ -44,11 +44,11 @@ public abstract class Animal {
 	
 //getter setter////////////////////////////////////////////////////////
 	
-	public int getSize() {
+	public float getSize() {
 		return size;
 	}
 
-	public void setSize(int size) {
+	public void setSize(float size) {
 		this.size = size;
 	}
 
@@ -60,11 +60,11 @@ public abstract class Animal {
 		this.name = name;
 	}
 	
-	public int getWeight() {
+	public float getWeight() {
 		return weight;
 	}
 
-	public void setWeight(int weight) {
+	public void setWeight(float weight) {
 		this.weight = weight;
 	}
 
