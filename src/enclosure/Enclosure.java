@@ -8,16 +8,19 @@ public class Enclosure {
 	protected String name;
 	protected float superficiy;
 	protected int capacity;
-	protected Cleanliness cleanliness;
+	protected EnumCleanliness cleanliness;
+	protected EnumRace race;
 	protected LinkedList<Animal> listAnimals = new LinkedList<Animal>();
 	
 	
 
-	public Enclosure(String name, float superficy, int capacity) {
+	public Enclosure(String name, float superficy, int capacity, EnumRace race){
 		this.name=name;
 		this.superficiy=superficy;
 		this.capacity=capacity;
-		cleanliness=Cleanliness.CLEAN;
+		cleanliness=EnumCleanliness.CLEAN;
+		this.race = race;
+		
 	}
 
 
@@ -51,12 +54,12 @@ public class Enclosure {
 	}
 
 
-	public Cleanliness getCleanliness() {
+	public EnumCleanliness getCleanliness() {
 		return cleanliness;
 	}
 
 
-	public void setCleanliness(Cleanliness cleanliness) {
+	public void setCleanliness(EnumCleanliness cleanliness) {
 		this.cleanliness = cleanliness;
 	}
 

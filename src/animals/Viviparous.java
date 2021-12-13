@@ -6,5 +6,10 @@ public abstract class Viviparous extends Animal {
 		super(name, size, weight, age, gender);
 		// TODO Auto-generated constructor stub
 	}
+	
+	@Override
+	public void cry() {
+		System.out.println("IM A VIVIPAROUS");
+	}
 
 }

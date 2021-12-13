@@ -1,5 +1,7 @@
 package animals;
 
+import animals.iComportment.IGiveBirth;
+
 public abstract class Animal {
 	
 	protected String name;
@@ -9,7 +11,7 @@ public abstract class Animal {
 	protected boolean gender;
 	protected boolean isSick;
 	protected boolean isHungry;
-	protected boolean isTired;
+	protected boolean isSleeping;
 	
 	
 
@@ -23,22 +25,39 @@ public abstract class Animal {
 		this.gender=gender;
 		isSick=false;
 		isHungry=false;
-		isTired=false;
+		isSleeping=false;
 		
 	}
 	
 //Methods////////////////////////////////////////////////////////////	
+	
+	public abstract Animal giveBirth();
 	public void cry() {
-			System.out.println("GRAOU");
+			System.out.println("IM AN ANIMAL");
 		}
 
+	public void starving() {
+		this.setHungry(true);
+	}
 	
 	public void eatFood() {
 		this.setHungry(false);
 	}
 	
-	public void sleep(){
-		this.setTired(false);
+	public void fallAsleep(){
+		this.setSleeping(true);
+	}
+	
+	public void wakeUp(){
+		this.setSleeping(false);
+	}
+	
+	public void care() {
+		this.setSick(false);
+	}
+	
+	public void sick() {
+		this.setSick(true);
 	}
 	
 	
@@ -104,12 +123,12 @@ public abstract class Animal {
 		this.isHungry = isHungry;
 	}
 
-	public boolean isTired() {
-		return isTired;
+	public boolean isSleeping() {
+		return isSleeping;
 	}
 
-	public void setTired(boolean isTired) {
-		this.isTired = isTired;
+	public void setSleeping(boolean isSleeping) {
+		this.isSleeping = isSleeping;
 	}
 
 }

@@ -1,6 +1,6 @@
 package enclosure;
 
-public enum Cleanliness {
+public enum EnumCleanliness {
 	BAD,
 	NORMAL,
 	CLEAN

@@ -1,5 +1,7 @@
 package animals;
 
+import java.lang.reflect.Constructor;
+
 public abstract class Oviparous extends Animal{
 
 	public Oviparous(String name, int size, int weight, int age, boolean gender) {
@@ -10,7 +12,10 @@ public abstract class Oviparous extends Animal{
 	
 	
 	
-	public void giveBirth() {
-		
+	
+	
+	@Override
+	public void cry() {
+		System.out.println("IM AN OVIPAROUS");
 	}
 }
