@@ -22,6 +22,23 @@ public class Enclosure {
 		this.race = race;
 		
 	}
+	
+	
+	public void addAnimal(Animal animal) {
+		if(!this.listAnimals.isEmpty()) {
+			this.listAnimals.add(animal);
+		}
+		else {
+			String currentRace = this.listAnimals.getFirst().getClass().getSimpleName();
+			String animalRace = animal.getClass().getSimpleName();
+			if(currentRace.compareTo(animalRace)!=0) {
+				System.out.println("Cet enclos ne contient que des "+currentRace+", impossible de mettres des "+animalRace+" dedans.");
+				return;
+			}
+			this.listAnimals.add(animal);
+			
+		}
+	}
 
 
 	public String getName() {
