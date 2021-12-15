@@ -1,9 +1,11 @@
 package controller;
 import animals.*;
+import creator.Creator;
 
 public class AnimalController extends Controller{
 	
 	private Animal animal=null;
+
 	
 	public void setAnimalSelect(Animal animal) {
 		this.animal=animal;

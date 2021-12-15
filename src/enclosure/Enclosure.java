@@ -14,12 +14,11 @@ public class Enclosure {
 	
 	
 
-	public Enclosure(String name, float superficy, int capacity, EnumRace race){
+	public Enclosure(String name, float superficy, int capacity){
 		this.name=name;
 		this.superficiy=superficy;
 		this.capacity=capacity;
 		cleanliness=EnumCleanliness.CLEAN;
-		this.race = race;
 		
 	}
 	

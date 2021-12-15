@@ -20,7 +20,9 @@ public class Zoo {
 	private LinkedList<Enclosure> listEnclosures = new LinkedList<Enclosure>();
 	
 	
-	private Clock clock = new Clock(enclosureController,animalController);
+	private Clock clock = new Clock();
+	
+	
 	
 	public Zoo(String name,int enclosureCapacity,String workerName,int ageWorker , Gender genderWorker) {
 		this.name=name;
@@ -29,6 +31,9 @@ public class Zoo {
 		
 	}
 	
+	
+	
+	
 	public void startSimulation() {
 		this.clock.run();
 	}
@@ -36,6 +41,11 @@ public class Zoo {
 	public void stopSimulation() {
 		this.clock.stop();
 	}
+	
+	
+	
+	
+	
 	
 	
 	

@@ -1,4 +1,4 @@
-package Controller;
+package controller;
 
 import animals.Animal;
 import employee.Gender;
