@@ -1,4 +1,9 @@
+
 package employee;
+
+import animals.Animal;
+import enclosure.Enclosure;
+import enclosure.EnumCleanliness;
 
 public class Worker{
 	
@@ -10,6 +15,15 @@ public class Worker{
 		this.name=name;
 		this.age=age;
 		this.setGender(gender);
+	}
+	
+	
+	public void giveFood(Animal animal) {
+		animal.eatFood();
+	}
+	
+	public void takeCare(Animal animal) {
+		animal.care();
 	}
 
 	public String getName() {
@@ -36,5 +50,18 @@ public class Worker{
 	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
+	
+	public EnumCleanliness examinEnclosure(Enclosure enclosure) {
+		return enclosure.getCleanliness();
+	}
+	
+	public void washEnclosure(Enclosure enclosure) {
+		enclosure.setCleanliness(EnumCleanliness.CLEAN);
+	}
+	
+	public void transferAnimal() {
+		
+	}
+	
 
 }

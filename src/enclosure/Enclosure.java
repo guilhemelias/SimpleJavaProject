@@ -88,4 +88,11 @@ public class Enclosure {
 	public void setListAnimals(LinkedList<Animal> listAnimals) {
 		this.listAnimals = listAnimals;
 	}
+	
+	
+	public String toString() {
+		return "Je suis un enclos prénomé"+this.name+", j'ai une capacité de "+this.capacity+" j'ai une superficie de "+
+				this.superficiy+" et j'ai une propreté de "+this.cleanliness+" je contient uniquement des "+ this.listAnimals.getFirst().getClass().getSimpleName();
+		
+	}
 }

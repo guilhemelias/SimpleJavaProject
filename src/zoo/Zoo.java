@@ -11,8 +11,7 @@ import controller.EnclosureController;
 
 public class Zoo {
 	
-	private EnclosureController enclosureController = new EnclosureController();
-	private AnimalController animalController = new AnimalController();
+	
 	private String name;
 	private int enclosureCapacity;
 	private int currentCapacity=0;
@@ -20,7 +19,7 @@ public class Zoo {
 	private LinkedList<Enclosure> listEnclosures = new LinkedList<Enclosure>();
 	
 	
-	private Clock clock = new Clock();
+	private Clock clock; 
 	
 	
 	
@@ -28,6 +27,7 @@ public class Zoo {
 		this.name=name;
 		this.enclosureCapacity=enclosureCapacity;
 		worker = new Worker(workerName,ageWorker,genderWorker);
+		this.clock=new Clock("starve","tired","sickness","baby","checkEnclosure","cleanliness","makeSound","transferAnimal");
 		
 	}
 	
@@ -88,6 +88,13 @@ public class Zoo {
 	public void setWorker(Worker worker) {
 		this.worker = worker;
 	}	
+	
+	public Clock getClock() {
+		return clock;
+	}
+	public void setClock(Clock clock) {
+		this.clock = clock;
+	}
 	public LinkedList<Enclosure> getListEnclosures() {
 		return listEnclosures;
 	}

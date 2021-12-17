@@ -1,7 +1,6 @@
 package simulation;
 
 import java.util.ArrayList;
-import java.util.EventListener;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,36 +9,50 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 
-import controller.*;
 
 
 
 public class Clock extends TimerTask {
 	
-	private EnclosureController enclosureController;
-	private AnimalController animalController ;
+	
 	Map<String, List<EventListener>> listeners = new HashMap<>();
 	
 	
 
     Timer timer = new Timer();
     
+    
+    
+    
+    public Clock(String... operations) {
+        for (String operation : operations) {
+        	System.out.println(operation);
+            this.listeners.put(operation, new ArrayList<>());
+        }
+    }
+    
+    public Clock(Map<String, List<EventListener>> listener) {
+    	this.listeners = listener;
+    }
+    
+    
 
     @Override
     public void run() {
-        int delay = (2 + new Random().nextInt(8)) * 1000;
-        timer.schedule(new Clock(), delay);
+        int delay = (2 + new Random().nextInt(5)) * 1000;
+        timer.schedule(new Clock(this.listeners), delay);
         
         
         //CODE A METTRE
 
-        if(new Random().nextInt(10) ==5) {
-        	System.out.println("stop");
-        	this.stop();
+        if(new Random().nextInt(10) < 5) {
+        	this.notify("cleanliness");
         }
         else {
-        	System.out.println(delay);
+        	this.notify("starve");        
         }
+        
+        
         
         
     }
@@ -53,11 +66,7 @@ public class Clock extends TimerTask {
     
     
 
-    public Clock(String... operations) {
-        for (String operation : operations) {
-            this.listeners.put(operation, new ArrayList<>());
-        }
-    }
+    
 
     public void subscribe(String eventType, EventListener listener) {
         List<EventListener> users = listeners.get(eventType);
@@ -67,6 +76,17 @@ public class Clock extends TimerTask {
     public void unsubscribe(String eventType, EventListener listener) {
         List<EventListener> users = listeners.get(eventType);
         users.remove(listener);
+    }
+    
+    public void notify(String eventType) {
+        //this.listeners.forEach((k,v)->System.out.println("Key : " + k + " Value : " + v));
+
+        List<EventListener> users = listeners.get(eventType);
+        
+        for (EventListener listener : users) {
+        	
+			listener.update(eventType);
+        }
     }
 
 

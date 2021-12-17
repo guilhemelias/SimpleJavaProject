@@ -1,8 +1,9 @@
 package controller;
 import animals.*;
 import creator.Creator;
+import simulation.EventListener;
 
-public class AnimalController extends Controller{
+public class AnimalController extends Controller implements EventListener{
 	
 	private Animal animal=null;
 
@@ -15,11 +16,35 @@ public class AnimalController extends Controller{
 		
 	}
 	
+	public void comportment() {
+		
+	}
+	
+	public void cry() {
+		this.animal.cry();
+	}
+	
+	public void wakeUp(){
+		this.animal.wakeUp();		
+	}
+	
+	public void asleep(){
+		this.animal.fallAsleep();		
+	}
+	
+	public void sick() {
+		this.animal.sick();
+	}
+	
+	public void starving() {
+		this.animal.starving();
+	}
+	
 	
 	public void makeChild() {
-		if(this.getAnimalSelect().isGender() == true) {
+		if(this.animal.isGender() == true) {
 		
-			String  babyClass = this.getAnimalSelect().getClass().getName();
+			String  babyClass = this.animal.getClass().getName();
 			
 			
 			
@@ -28,6 +53,14 @@ public class AnimalController extends Controller{
 		else {
 			return;
 		}
+		
+	}
+	
+	
+	@Override
+	public void update(String eventType) {
+		// TODO Auto-generated method stub
+		System.out.println("JAI FAIM");
 		
 	}
 
