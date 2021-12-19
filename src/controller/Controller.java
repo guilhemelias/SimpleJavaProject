@@ -9,36 +9,47 @@ import enclosure.EnumCleanliness;
 import simulation.EventListener;
 import zoo.Zoo;
 
+/**
+ * @author Guilhem
+ *class to communicate between model and view
+ */
 public class Controller implements EventListener{
 	private Zoo zoo;
-	private Enclosure enclosureSelect;
-	protected Animal animalSelect;
+
 	
+	/**
+	 * create the zoo for the game
+	 * @param name
+	 * @param enclosureCapacity
+	 * @param workerName
+	 * @param ageWorker
+	 * @param genderWorker
+	 */
 	public void createZoo(String name,int enclosureCapacity,String workerName,int ageWorker,Gender genderWorker) {
 		this.zoo= new Zoo(name,enclosureCapacity,workerName,ageWorker,genderWorker);
 	}
 	
-	public Enclosure getEnclosureSelect() {
-		return enclosureSelect;
-	}
-	public void setEnclosureSelect(Enclosure enclosureSelect) {
-		this.enclosureSelect = enclosureSelect;
-	}
-	public Animal getAnimalSelect() {
-		return animalSelect;
-	}
-	public void setAnimalSelect(Animal animalSelect) {
-		this.animalSelect = animalSelect;
-	}
+	
+	
+	/**
+	 * @return
+	 */
 	public Zoo getZoo() {
 		return zoo;
 	}
+	/**
+	 * @param zoo
+	 */
 	public void setZoo(Zoo zoo) {
 		this.zoo = zoo;
 	}
 	
 	
 	
+	/**
+	 * choose a random enclosure from the list of enclosures
+	 * @return enclosure
+	 */
 	public Enclosure chooseRandomEnclosure() {
 		
 		int size = this.zoo.getListEnclosures().size();
@@ -47,6 +58,10 @@ public class Controller implements EventListener{
 		
 	}
 	
+	/**
+	 * choose a random animal from the list of animals
+	 * @return animal
+	 */
 	public Animal chooseRandomAnimal() {
 		Enclosure enclosureChoosen =  this.chooseRandomEnclosure();
 		int size = enclosureChoosen.getListAnimals().size();
@@ -56,6 +71,11 @@ public class Controller implements EventListener{
 	}
 	
 	
+	/**
+	 * method used too if in the situation where we have a worker which is also simulated
+	 * method to check and clean enclosure
+	 * @param enclosure
+	 */
 	public void checkAndCleanEnclosure(Enclosure enclosure) {
 		EnumCleanliness clean = this.zoo.getWorker().examinEnclosure(enclosure)	;
 		if(clean == EnumCleanliness.CLEAN) {
@@ -70,6 +90,9 @@ public class Controller implements EventListener{
 	
 	
 	
+	/**
+	 * method for alterate the cleanliness of an enclosure
+	 */
 	public void changeCleanliness() {
 
 		Enclosure enclosureToChange = this.chooseRandomEnclosure();
@@ -92,6 +115,11 @@ public class Controller implements EventListener{
 	
 	
 	
+	/**
+	 * @param enclosure
+	 * method not used but can be used for the case if we make the worker in the simulation
+	 * it serve to check all animal of an enclosure and ake care of them if its needed
+	 */
 	public void checkAnimals(Enclosure enclosure) {
 		
 		enclosure.displayAnimals();
@@ -113,10 +141,18 @@ public class Controller implements EventListener{
 	}
 	
 	
+	/**
+	 * @param animal
+	 * make the animal sick in the simulation
+	 */
 	public void sickness(Animal animal) {
 		animal.sick();
 	}
 	
+	/**
+	 * @param animal
+	 * make the animal cry in the simulation
+	 */
 	public void makeSound(Animal animal) {
 		if(animal.isSleeping()) {
 			return;
@@ -124,6 +160,10 @@ public class Controller implements EventListener{
 		animal.cry();
 	}
 	
+	/**
+	 * @param animal
+	 * make the animal hunger in the simulation
+	 */
 	public void starve(Animal animal) {
 		if(animal.isSleeping()) {
 			return;
@@ -131,6 +171,10 @@ public class Controller implements EventListener{
 		animal.starving();
 	}
 	
+	/**
+	 * @param animal 
+	 * make the animal sleep in the simulation
+	 */
 	public void tired(Animal animal) {
 		if(animal.isSleeping()) {
 			return;
@@ -141,6 +185,9 @@ public class Controller implements EventListener{
 	
 	
 
+	/**
+	 * It's here that the controller get notify from the simulator and make actions in function notified
+	 */
 	@Override
 	public void update(String eventType) {
 		// TODO Auto-generated method stub

@@ -33,7 +33,7 @@ public class Eagle extends Oviparous implements IFlyer{
 
 
 	/**
-	 *
+	 *flying comportment added with IFlyer interface
 	 */
 	@Override
 	public String flying() {
@@ -43,7 +43,7 @@ public class Eagle extends Oviparous implements IFlyer{
 
 
 	/**
-	 *
+	 *give birth
 	 */
 	@Override
 	public Animal giveBirth() {

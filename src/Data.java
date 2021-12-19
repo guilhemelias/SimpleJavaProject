@@ -4,6 +4,10 @@ import employee.Gender;
 import enclosure.Aviary;
 import enclosure.Enclosure;
 
+/**
+ * @author Guilhem
+ * data class
+ */
 public class Data {
 
 	private Controller controller = new Controller();

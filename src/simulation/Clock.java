@@ -12,6 +12,10 @@ import java.util.TimerTask;
 
 
 
+/**
+ * @author Guilhem
+ *Clock class for animal events
+ */
 public class Clock extends TimerTask {
 	
 	
@@ -24,6 +28,10 @@ public class Clock extends TimerTask {
     
     
     
+    /**
+     * @param operations
+     * first constructor which take operations list for the eventlistener
+     */
     public Clock(String... operations) {
         for (String operation : operations) {
         	System.out.println(operation);
@@ -31,12 +39,19 @@ public class Clock extends TimerTask {
         }
     }
     
+    /**
+     * @param listener
+     * second constructor for sheduled tasks
+     */
     public Clock(Map<String, List<EventListener>> listener) {
     	this.listeners = listener;
     }
     
     
 
+    /**run simulation  method
+     *
+     */
     @Override
     public void run() {
         int delay = (2 + new Random().nextInt(10)) * 1000;
@@ -62,6 +77,9 @@ public class Clock extends TimerTask {
     }
     
     
+    /**
+     * stop simulation method
+     */
     public void stop() {
     	this.cancel();
     	this.timer.cancel();
@@ -72,16 +90,30 @@ public class Clock extends TimerTask {
 
     
 
+    /**
+     * subscribe listeners to events
+     * @param eventType
+     * @param listener
+     */
     public void subscribe(String eventType, EventListener listener) {
         List<EventListener> users = listeners.get(eventType);
         users.add(listener);
     }
 
+    /**
+     * unsubscribe listeners to events
+     * @param eventType
+     * @param listener
+     */
     public void unsubscribe(String eventType, EventListener listener) {
         List<EventListener> users = listeners.get(eventType);
         users.remove(listener);
     }
     
+    /**
+     * notify listeners from an event that they are subscribes
+     * @param eventType
+     */
     public void notify(String eventType) {
         //this.listeners.forEach((k,v)->System.out.println("Key : " + k + " Value : " + v));
 

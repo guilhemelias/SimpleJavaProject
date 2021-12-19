@@ -10,7 +10,16 @@ import enclosure.Aviary;
 import enclosure.Enclosure;
 import zoo.Zoo;
 
+/**
+ * @author Guilhem
+ *Main class
+ */
 public class Main {
+	/**
+	 * @param args
+	 * @throws InterruptedException
+	 * start of the program
+	 */
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		Controller controller = null;
