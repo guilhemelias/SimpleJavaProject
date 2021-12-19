@@ -1,6 +1,7 @@
 import animals.*;
 import controller.Controller;
 import employee.Gender;
+import enclosure.Aviary;
 import enclosure.Enclosure;
 
 public class Data {
@@ -18,10 +19,10 @@ public class Data {
 		controller.getZoo().getListEnclosures().getLast().addAnimal(new Wolf("Wolf2", 1, 12, 2, false));
 		controller.getZoo().getListEnclosures().getLast().addAnimal(new Wolf("Wolf3", 1, 12, 2, false));
 		
-		controller.getZoo().addEnclosure(new Enclosure("hey2", 20, 2));
-		controller.getZoo().getListEnclosures().getLast().addAnimal(new Wolf("Wolf4", 1, 12, 2, false));
-		controller.getZoo().getListEnclosures().getLast().addAnimal(new Wolf("Wolf5", 1, 12, 2, false));
-		controller.getZoo().getListEnclosures().getLast().addAnimal(new Wolf("Wolf6", 1, 12, 2, false));
+		controller.getZoo().addEnclosure(new Aviary("hey2", 20, 2,5));
+		controller.getZoo().getListEnclosures().getLast().addAnimal(new Auk("Auk4", 1, 12, 2, false));
+		controller.getZoo().getListEnclosures().getLast().addAnimal(new Auk("Auk5", 1, 12, 2, false));
+		controller.getZoo().getListEnclosures().getLast().addAnimal(new Auk("Auk6", 1, 12, 2, false));
 		
 		
 		controller.getZoo().addEnclosure(new Enclosure("hey3", 35, 5));

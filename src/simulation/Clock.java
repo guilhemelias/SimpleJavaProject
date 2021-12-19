@@ -46,11 +46,11 @@ public class Clock extends TimerTask {
         //CODE A METTRE
         int random = new Random().nextInt(30);
         
-        if(random<3) {
+        if(random<4) {
         	this.notify("sickness");
         }
 
-        if(random <6) {
+        if(random <3) {
         	this.notify("makeSound");
         }else if(random>5 && random <17) {
         	this.notify("starve");

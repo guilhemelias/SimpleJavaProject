@@ -1,13 +1,12 @@
 package zoo;
 import enclosure.*;
+
 import employee.*;
 
 import simulation.*;
 import java.util.LinkedList;
 
-import animals.Animal;
-import controller.AnimalController;
-import controller.EnclosureController;
+
 
 
 public class Zoo {
@@ -21,7 +20,6 @@ public class Zoo {
 	
 	
 	private Clock clock; 
-	private WorkerClock workerClock;
 	private EnclosureClock enclosureClock;
 	
 	
@@ -31,7 +29,6 @@ public class Zoo {
 		this.enclosureCapacity=enclosureCapacity;
 		worker = new Worker(workerName,ageWorker,genderWorker);
 		this.clock=new Clock("starve","tired","sickness","baby","makeSound");
-		this.workerClock = new WorkerClock("checkEnclosure","transferAnimal","checkAnimals");
 		this.enclosureClock = new EnclosureClock("cleanliness");
 	}
 	
@@ -40,13 +37,11 @@ public class Zoo {
 	
 	public void startSimulation() {
 		this.enclosureClock.run();
-		this.workerClock.run();
 		this.clock.run();
 	}
 	
 	public void stopSimulation() {
 		this.enclosureClock.stop();
-		this.workerClock.stop();
 		this.clock.stop();
 	}
 	
@@ -85,12 +80,22 @@ public class Zoo {
 		
 	}
 	
-	
 	public void displayEnclosures() {
 		int size=this.listEnclosures.size();
 		for (int i = 0; i < size; i++)
 	    {
-			System.out.println(this.listEnclosures.get(i).getClass().getSimpleName() + " - Name : " + this.listEnclosures.get(i).getName() +" - Clean : "+ this.listEnclosures.get(i).getCleanliness());
+			System.out.println(i + " : "+this.listEnclosures.get(i).getClass().getSimpleName() + " - Name : " + this.listEnclosures.get(i).getName() + " - Capacity : " + this.listEnclosures.get(i).getCapacity() +" - Clean : "+ this.listEnclosures.get(i).getCleanliness());
+	    }
+	}
+	
+	
+	public void displayEnclosuresAndAnimals() {
+		int size=this.listEnclosures.size();
+		for (int i = 0; i < size; i++)
+	    {
+			System.out.println(this.listEnclosures.get(i).getClass().getSimpleName() + " - Name : " + this.listEnclosures.get(i).getName() + " - Capacity : " + this.listEnclosures.get(i).getCapacity() +" - Clean : "+ this.listEnclosures.get(i).getCleanliness());
+			this.listEnclosures.get(i).displayAnimals();
+			System.out.println("");
 	    }
 	}
 	
@@ -126,13 +131,7 @@ public class Zoo {
 		this.listEnclosures = listEnclosures;
 	}
 
-	public WorkerClock getWorkerClock() {
-		return workerClock;
-	}
-
-	public void setWorkerClock(WorkerClock workerClock) {
-		this.workerClock = workerClock;
-	}
+	
 
 
 

@@ -27,29 +27,33 @@ public class Enclosure {
 		int size=this.listAnimals.size();
 		for (int i = 0; i < size; i++)
 	    {
-			System.out.println(this.listAnimals.get(i));
+			System.out.println(i + " - "+this.listAnimals.get(i));
 	    }
 	}
 	
 	
-	public void addAnimal(Animal animal) {
+	public boolean addAnimal(Animal animal) {
 		if(this.listAnimals.isEmpty()) {
 			this.listAnimals.add(animal);
+			return true;
 		}
 		else {
 			String currentRace = this.listAnimals.getFirst().getClass().getSimpleName();
 			String animalRace = animal.getClass().getSimpleName();
 			if(currentRace.compareTo(animalRace)!=0) {
 				System.out.println("Cet enclos ne contient que des "+currentRace+", impossible de mettres des "+animalRace+" dedans.");
-				return;
+				return false;
 			}
 			this.listAnimals.add(animal);
+			return true;
 			
 		}
 	}
 	
-	public void retireAnimal(int index) {
+	public Animal retireAnimal(int index) {
+		Animal animal = this.researchAnimal(index);
 		this.listAnimals.remove(index);
+		return animal;
 	}
 	
 	public Animal researchAnimal(int index) {

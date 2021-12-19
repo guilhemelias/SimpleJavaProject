@@ -25,6 +25,10 @@ public class Worker{
 	public void takeCare(Animal animal) {
 		animal.care();
 	}
+	
+	public void wakeUp(Animal animal) {
+		animal.wakeUp();
+	}
 
 	public String getName() {
 		return name;
@@ -59,8 +63,12 @@ public class Worker{
 		enclosure.setCleanliness(EnumCleanliness.CLEAN);
 	}
 	
-	public void transferAnimal(Animal animal,Enclosure enclosure) {
-		enclosure.addAnimal(animal);
+	public void transferAnimal(int animal,Enclosure enclosure, Enclosure enclosureTo) {
+		Animal animalToTransfer = enclosure.retireAnimal(animal);
+		if(!enclosureTo.addAnimal(animalToTransfer)) {
+			enclosure.addAnimal(animalToTransfer);
+		}
+		
 	}
 	
 

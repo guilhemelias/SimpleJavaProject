@@ -37,9 +37,7 @@ public class Controller implements EventListener{
 		this.zoo = zoo;
 	}
 	
-	public void displayAll() {
-		
-	}
+	
 	
 	public Enclosure chooseRandomEnclosure() {
 		
@@ -78,10 +76,8 @@ public class Controller implements EventListener{
 
 		if(enclosureToChange.getCleanliness() == EnumCleanliness.CLEAN) {
 			enclosureToChange.setCleanliness(EnumCleanliness.NORMAL);
-			System.out.println("JE BAISSE A NORMAL");
 		}else {
 			enclosureToChange.setCleanliness(EnumCleanliness.BAD);
-			System.out.println("JE BAISSE A BAD");
 		}
 	}
 	
@@ -92,6 +88,8 @@ public class Controller implements EventListener{
 			this.zoo.getWorker().giveFood(enclosure.getListAnimals().get(i));
 	    }
 	}
+	
+	
 	
 	
 	public void checkAnimals(Enclosure enclosure) {
@@ -137,6 +135,7 @@ public class Controller implements EventListener{
 		if(animal.isSleeping()) {
 			return;
 		}
+		animal.fallAsleep();
 	}
 	
 	
@@ -149,29 +148,30 @@ public class Controller implements EventListener{
 		switch(eventType){
 
         case "cleanliness": 
-        	System.out.println("Change clean");
             this.changeCleanliness();
             break;
 
         case "checkEnclosure":
-        	this.zoo.displayEnclosures();
+        	
         	int random = new Random().nextInt(this.getZoo().getListEnclosures().size());
         	
             Enclosure enclosureToCheck = this.getZoo().researchEnclosure(random);
-            System.out.println("check clean "+enclosureToCheck.getName());
             this.checkAndCleanEnclosure(enclosureToCheck);
             break;
         case "starve":
         	this.starve(this.chooseRandomAnimal());
         	break;
         case "tired":
-        	//Animal animalTired = this.chooseRandomAnimal();
+        	this.tired(this.chooseRandomAnimal());
         	break;
         case "sickness":
         	this.sickness(this.chooseRandomAnimal());
         	break;
         case "makeSound":
         	this.makeSound(this.chooseRandomAnimal());
+        	break;
+        case "display":
+        	//this.zoo.displayEnclosuresAndAnimals();
         	break;
         case "checkAnimals" : 
         	System.out.println("CheckAnimal");

@@ -9,6 +9,9 @@ public class Goldfish extends Oviparous implements ISwimmer{
 		// TODO Auto-generated constructor stub
 	}
 	
+	/**
+	 *Specific cry method for the goldfish
+	 */
 	@Override
 	public void cry() {
 		System.out.println("IM A GOLDFISH");

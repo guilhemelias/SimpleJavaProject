@@ -36,7 +36,7 @@ public class EnclosureClock extends TimerTask {
         
         //CODE A METTRE
 
-        if(new Random().nextInt(10) < 5) {
+        if(new Random().nextInt(10) < 4) {
         	this.notify("cleanliness");
         }
 		
