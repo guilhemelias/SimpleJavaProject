@@ -39,21 +39,25 @@ public class Clock extends TimerTask {
 
     @Override
     public void run() {
-        int delay = (2 + new Random().nextInt(5)) * 1000;
+        int delay = (2 + new Random().nextInt(10)) * 1000;
         timer.schedule(new Clock(this.listeners), delay);
         
         
         //CODE A METTRE
+        int random = new Random().nextInt(30);
+        
+        if(random<3) {
+        	this.notify("sickness");
+        }
 
-        if(new Random().nextInt(10) < 5) {
-        	this.notify("cleanliness");
+        if(random <6) {
+        	this.notify("makeSound");
+        }else if(random>5 && random <17) {
+        	this.notify("starve");
+        	
+        }else {
+        	this.notify("tired");
         }
-        else {
-        	this.notify("starve");        
-        }
-        
-        
-        
         
     }
     
@@ -83,8 +87,7 @@ public class Clock extends TimerTask {
 
         List<EventListener> users = listeners.get(eventType);
         
-        for (EventListener listener : users) {
-        	
+        for (EventListener listener : users) {        	
 			listener.update(eventType);
         }
     }

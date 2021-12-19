@@ -3,42 +3,76 @@ import controller.Controller;
 import controller.EnclosureController;
 import employee.Gender;
 import enclosure.Aviary;
+import enclosure.Enclosure;
 import zoo.Zoo;
 
 public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Controller controller = new Controller();
-		EnclosureController enclosureController = new EnclosureController();
-		AnimalController animalController = new AnimalController();
+		Controller controller = null;
+		Data data = new Data();
 		
-		controller.createZoo("Zozo",40,"Gerard",34,Gender.MALE);
-		System.out.println(controller.getZoo());
+		boolean ans = true;
 		
 		
+		while(ans) {
+			if(controller==null) {
+				//Récup valeur zoo
+				System.out.println("Nouvelle partie de Zoo ! ");
+
+				
+				data.createZoo();
+				controller = data.getController();
+				
+				controller.getZoo().getClock().subscribe("starve",controller );
+				controller.getZoo().getClock().subscribe("tired",controller );
+				controller.getZoo().getClock().subscribe("sickness",controller );
+				controller.getZoo().getClock().subscribe("baby",controller );
+				controller.getZoo().getClock().subscribe("makeSound",controller );
+				
+				controller.getZoo().getEnclosureClock().subscribe("cleanliness",controller );
+				
+				controller.getZoo().getWorkerClock().subscribe("checkEnclosure",controller );
+				controller.getZoo().getWorkerClock().subscribe("transferAnimal",controller );
+				controller.getZoo().getWorkerClock().subscribe("checkAnimals",controller );
+				
+				controller.getZoo().startSimulation();
+				
+			}else {
+				System.out.println("/////////////////////////////////////////////////////////////////");
+				System.out.println("//                                                             //");
+				System.out.println("//                                                             //");
+				System.out.println("//"+ controller.getZoo()+ "//");
+				System.out.println("//");
+				System.out.println("//");
+				System.out.println("//");
+				System.out.println("//");
+				System.out.println("//");
+				System.out.println("//                                                             //");
+				System.out.println("//                                                             //");
+				System.out.println("/////////////////////////////////////////////////////////////////");
+			}
+			
+			
+		}
+		
+		
+				
 		
 		
 		
-		controller.getZoo().getClock().subscribe("starve",animalController );
-		controller.getZoo().getClock().subscribe("tired",animalController );
-		controller.getZoo().getClock().subscribe("sickness",animalController );
-		controller.getZoo().getClock().subscribe("baby",animalController );
-		controller.getZoo().getClock().subscribe("makeSound",animalController );
-		
-		controller.getZoo().getClock().subscribe("cleanliness",enclosureController );
-		
-		
-		
-		controller.getZoo().startSimulation();
 		
 		
 		
 		
 		
 		
-		controller.getZoo().addEnclosure(new Aviary("test",4,4,4));
+
+		
 		System.out.println(controller.getZoo().getListEnclosures().getFirst().getClass().getSimpleName());
 		
 	}
+	
+	
 	
 }

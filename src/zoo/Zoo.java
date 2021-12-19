@@ -5,6 +5,7 @@ import employee.*;
 import simulation.*;
 import java.util.LinkedList;
 
+import animals.Animal;
 import controller.AnimalController;
 import controller.EnclosureController;
 
@@ -20,6 +21,8 @@ public class Zoo {
 	
 	
 	private Clock clock; 
+	private WorkerClock workerClock;
+	private EnclosureClock enclosureClock;
 	
 	
 	
@@ -27,18 +30,23 @@ public class Zoo {
 		this.name=name;
 		this.enclosureCapacity=enclosureCapacity;
 		worker = new Worker(workerName,ageWorker,genderWorker);
-		this.clock=new Clock("starve","tired","sickness","baby","checkEnclosure","cleanliness","makeSound","transferAnimal");
-		
+		this.clock=new Clock("starve","tired","sickness","baby","makeSound");
+		this.workerClock = new WorkerClock("checkEnclosure","transferAnimal","checkAnimals");
+		this.enclosureClock = new EnclosureClock("cleanliness");
 	}
 	
 	
 	
 	
 	public void startSimulation() {
+		this.enclosureClock.run();
+		this.workerClock.run();
 		this.clock.run();
 	}
 	
 	public void stopSimulation() {
+		this.enclosureClock.stop();
+		this.workerClock.stop();
 		this.clock.stop();
 	}
 	
@@ -51,7 +59,7 @@ public class Zoo {
 	
 	
 	public String toString() {
-		return "Je suis un zoo prénomé"+this.name+", j'ai une capacité de "+this.enclosureCapacity+" j'ai un employé "+
+		return "Zoo de "+this.name+", j'ai une capacité de "+this.enclosureCapacity+" et j'ai un employé "+
 				this.getWorker().getGender()+this.getWorker().getName()+" agé de "+this.getWorker().getAge();
 		
 	}
@@ -68,6 +76,22 @@ public class Zoo {
 	
 	public void deleteEnclosure() {
 		
+	}
+	
+	
+	public Enclosure researchEnclosure(int index) {
+		
+		return this.listEnclosures.get(index);
+		
+	}
+	
+	
+	public void displayEnclosures() {
+		int size=this.listEnclosures.size();
+		for (int i = 0; i < size; i++)
+	    {
+			System.out.println(this.listEnclosures.get(i).getClass().getSimpleName() + " - Name : " + this.listEnclosures.get(i).getName() +" - Clean : "+ this.listEnclosures.get(i).getCleanliness());
+	    }
 	}
 	
 	public String getName() {
@@ -100,6 +124,28 @@ public class Zoo {
 	}
 	public void setListEnclosures(LinkedList<Enclosure> listEnclosures) {
 		this.listEnclosures = listEnclosures;
+	}
+
+	public WorkerClock getWorkerClock() {
+		return workerClock;
+	}
+
+	public void setWorkerClock(WorkerClock workerClock) {
+		this.workerClock = workerClock;
+	}
+
+
+
+
+	public EnclosureClock getEnclosureClock() {
+		return enclosureClock;
+	}
+
+
+
+
+	public void setEnclosureClock(EnclosureClock enclosureClock) {
+		this.enclosureClock = enclosureClock;
 	}
 	
 	 

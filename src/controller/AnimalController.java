@@ -5,46 +5,37 @@ import simulation.EventListener;
 
 public class AnimalController extends Controller implements EventListener{
 	
-	private Animal animal=null;
-
 	
-	public void setAnimalSelect(Animal animal) {
-		this.animal=animal;
-	}
-	public Animal getAnimalSelect() {
-		return this.animal;
-		
-	}
 	
 	public void comportment() {
 		
 	}
 	
 	public void cry() {
-		this.animal.cry();
+		this.animalSelect.cry();
 	}
 	
 	public void wakeUp(){
-		this.animal.wakeUp();		
+		this.animalSelect.wakeUp();		
 	}
 	
 	public void asleep(){
-		this.animal.fallAsleep();		
+		this.animalSelect.fallAsleep();		
 	}
 	
 	public void sick() {
-		this.animal.sick();
+		this.animalSelect.sick();
 	}
 	
 	public void starving() {
-		this.animal.starving();
+		this.animalSelect.starving();
 	}
 	
 	
 	public void makeChild() {
-		if(this.animal.isGender() == true) {
+		if(this.animalSelect.isGender() == true) {
 		
-			String  babyClass = this.animal.getClass().getName();
+			String  babyClass = this.animalSelect.getClass().getName();
 			
 			
 			

@@ -1,9 +1,12 @@
 package controller;
 
+import employee.Worker;
 import enclosure.Enclosure;
 import simulation.EventListener;
 
 public class EnclosureController extends Controller implements EventListener{
+	
+	
 	
 	public Boolean addEnclosure(Enclosure enclosure){
 		return null;
@@ -13,8 +16,11 @@ public class EnclosureController extends Controller implements EventListener{
 	@Override
 	public void update(String eventType) {
 		// TODO Auto-generated method stub
-		System.out.println("JE BAISSE");
+		
+		
 	}
+
+	
 	
 	
 	

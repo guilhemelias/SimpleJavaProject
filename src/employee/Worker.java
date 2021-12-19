@@ -59,8 +59,8 @@ public class Worker{
 		enclosure.setCleanliness(EnumCleanliness.CLEAN);
 	}
 	
-	public void transferAnimal() {
-		
+	public void transferAnimal(Animal animal,Enclosure enclosure) {
+		enclosure.addAnimal(animal);
 	}
 	
 

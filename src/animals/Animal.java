@@ -1,5 +1,7 @@
 package animals;
 
+import java.util.Random;
+
 import animals.iComportment.IGiveBirth;
 
 public abstract class Animal {
@@ -46,6 +48,7 @@ public abstract class Animal {
 	
 	public void fallAsleep(){
 		this.setSleeping(true);
+		
 	}
 	
 	public void wakeUp(){
@@ -130,5 +133,12 @@ public abstract class Animal {
 	public void setSleeping(boolean isSleeping) {
 		this.isSleeping = isSleeping;
 	}
+	
+	
+	public String toString() {
+		return this.name + " is starving : " + this.isHungry + " is sick : " + this.isSick;
+		
+	}
+	
 
 }

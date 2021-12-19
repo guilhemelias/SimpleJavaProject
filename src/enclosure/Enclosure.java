@@ -23,8 +23,17 @@ public class Enclosure {
 	}
 	
 	
+	public void displayAnimals() {
+		int size=this.listAnimals.size();
+		for (int i = 0; i < size; i++)
+	    {
+			System.out.println(this.listAnimals.get(i));
+	    }
+	}
+	
+	
 	public void addAnimal(Animal animal) {
-		if(!this.listAnimals.isEmpty()) {
+		if(this.listAnimals.isEmpty()) {
 			this.listAnimals.add(animal);
 		}
 		else {
@@ -37,6 +46,21 @@ public class Enclosure {
 			this.listAnimals.add(animal);
 			
 		}
+	}
+	
+	public void retireAnimal(int index) {
+		this.listAnimals.remove(index);
+	}
+	
+	public Animal researchAnimal(int index) {
+		Animal animal = null;
+		int size=this.listAnimals.size();
+		for (int i = 0; i < size; i++)
+	    {
+	        animal= this.listAnimals.get(i);
+	    }
+		return animal;
+		
 	}
 
 
